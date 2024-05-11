@@ -1,0 +1,1 @@
+"Into the Great Wide Open" by Novowyr is licensed under CC BY-NC-SA 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/2.0/?ref=openverse.

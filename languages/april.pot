@@ -1,0 +1,257 @@
+# Copyright (C) 2024 Tradesouthwest
+# This file is distributed under the GNU General Public License v2 or later.
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: April 1.0.1\n"
+"Report-Msgid-Bugs-To: https://support.tradesouthwest.com\n"
+"POT-Creation-Date: 2024-05-11 15:28-0700\n"
+"PO-Revision-Date: 2023-06-12 10:41-0700\n"
+"Last-Translator: \n"
+"Language-Team: Tradesouthwest\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Poedit-KeywordsList: _;_e;__;_x;esc_html__;esc_html_e;esc_attr__;"
+"esc_attr_e\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: archive.php:59 attachment.php:57 headerless-page.php:34
+msgid "Previous page"
+msgstr ""
+
+#: archive.php:60 attachment.php:58 headerless-page.php:35
+msgid "Next page"
+msgstr ""
+
+#: archive.php:61 attachment.php:59 headerless-page.php:36
+msgid "Page"
+msgstr ""
+
+#: comments.php:23
+msgid "Disscusion"
+msgstr ""
+
+#: comments.php:45
+msgid "Comments are closed."
+msgstr ""
+
+#: footer.php:19
+msgid "Footer Social Links Menu"
+msgstr ""
+
+#: footer.php:41
+msgid "https://www.classicpress.net/"
+msgstr ""
+
+#: footer.php:43
+#, php-format
+msgid "Proudly powered by %s"
+msgstr ""
+
+#: functions.php:113 header.php:32
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:114
+msgid "Social Links Menu"
+msgstr ""
+
+#: functions.php:173
+msgid "expand child menu"
+msgstr ""
+
+#: functions.php:174
+msgid "collapse child menu"
+msgstr ""
+
+#: functions.php:212
+msgid "Call To Action"
+msgstr ""
+
+#: functions.php:214
+msgid "Appears in the hero large image section"
+msgstr ""
+
+#: functions.php:224
+msgid "Sidebar"
+msgstr ""
+
+#: functions.php:226
+msgid "Add widgets here to appear in your sidebar."
+msgstr ""
+
+#: functions.php:236
+msgid "Additional Sidebar Content"
+msgstr ""
+
+#: functions.php:238
+msgid "Appears at the bottom of the content on posts and pages."
+msgstr ""
+
+#: functions.php:254
+msgid "By: "
+msgstr ""
+
+#: functions.php:255
+msgid "Categorized as: "
+msgstr ""
+
+#: functions.php:256
+msgid "Keys: "
+msgstr ""
+
+#: functions.php:257
+msgid "Added on: "
+msgstr ""
+
+#: functions.php:321
+msgid "More..."
+msgstr ""
+
+#: header.php:26
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:40
+msgid "open menu"
+msgstr ""
+
+#: inc/customizer.php:93
+msgid "April Theme Settings"
+msgstr ""
+
+#: inc/customizer.php:107
+msgid "Site Title Color"
+msgstr ""
+
+#: inc/customizer.php:123
+msgid "Position of title."
+msgstr ""
+
+#: inc/customizer.php:143 inc/customizer.php:156
+msgid "Alignment must be set to Relative."
+msgstr ""
+
+#: inc/customizer.php:172
+msgid "Choose the font family type."
+msgstr ""
+
+#: inc/customizer.php:175
+msgid "Select font"
+msgstr ""
+
+#: inc/customizer.php:176
+msgid "Sans Serif"
+msgstr ""
+
+#: inc/customizer.php:177
+msgid "Serif"
+msgstr ""
+
+#: inc/customizer.php:178
+msgid "Helvetica"
+msgstr ""
+
+#: inc/customizer.php:179
+msgid "Arial"
+msgstr ""
+
+#: inc/customizer.php:180
+msgid "Monospace"
+msgstr ""
+
+#: inc/customizer.php:196
+msgid "Upload Hero Image"
+msgstr ""
+
+#: inc/customizer.php:211
+msgid "Position of background image."
+msgstr ""
+
+#: inc/customizer.php:214
+msgid "Cover"
+msgstr ""
+
+#: inc/customizer.php:215
+msgid "Contain"
+msgstr ""
+
+#: inc/customizer.php:216
+msgid "Half"
+msgstr ""
+
+#: inc/customizer.php:217
+msgid "Over Size"
+msgstr ""
+
+#: inc/customizer.php:231
+msgid ""
+"Position of CallToAction. (51=right; -12=left) Remember to select "
+"a Call To Action widget to display your content with."
+msgstr ""
+
+#: inc/customizer.php:245
+msgid "Select how you want to show banner on single post pages."
+msgstr ""
+
+#: inc/customizer.php:248
+msgid "Show Banner on Single Posts"
+msgstr ""
+
+#: inc/customizer.php:249
+msgid "Do Not Show Banner on Posts"
+msgstr ""
+
+#: inc/theme-admin-menu.php:27
+msgid "Basic Info"
+msgstr ""
+
+#: inc/theme-admin-menu.php:30
+msgid "Customizer Link"
+msgstr ""
+
+#: inc/theme-admin-menu.php:41
+msgid "April Theme Guide"
+msgstr ""
+
+#: inc/theme-admin-menu.php:42
+msgid "General Help"
+msgstr ""
+
+#: inc/theme-admin-menu.php:66 inc/theme-admin-menu.php:67
+msgid "Customize Theme Here"
+msgstr ""
+
+#: inc/theme-admin-menu.php:72
+msgid "Theme Options Include:"
+msgstr ""
+
+#: inc/theme-admin-menu.php:73
+msgid ""
+"\n"
+"    - Upload Hero Image.\n"
+"    - Position for Image.\n"
+"      Position of background image.\n"
+"    - Placement of Call to Action buttons.\n"
+"    - Font for Content\n"
+"      Choose the font family type.\n"
+"      "
+msgstr ""
+
+#: inc/theme-admin-menu.php:81
+msgid "For Call To Action Widget try: (copy/paste into widget)"
+msgstr ""
+
+#: inc/theme-admin-menu.php:88
+msgid ""
+"Use the Custom HTML type of widget to display your buttons with."
+msgstr ""
+
+#: inc/theme-admin-menu.php:93
+msgid "Produced by "
+msgstr ""
