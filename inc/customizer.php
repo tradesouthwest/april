@@ -40,15 +40,15 @@ function april_theme_customizer_css()
     $fnt = $font = ''; $gen_colr = '#494949'; 
    
     $hcdf  = get_template_directory_uri() . '/rels/swimmers-wide-default.jpg';
+	$hcdg  = get_template_directory_uri() . '/rels/1x1.png';
     $hsdf  = get_stylesheet_directory_uri() . '/';
     
     if( get_theme_mods() ) : 
-	$fntfamily  = ( empty( get_theme_mod( 'april_fontfamily' ) ) ) 
-		        ? 'sans-serif' 
+	$fntfamily  = ( empty( get_theme_mod( 'april_fontfamily' ) ) ) ? 'sans-serif' 
 				: wp_strip_all_tags( get_theme_mod( 'april_fontfamily' ) );
     // background image
-	$herouri  = ( empty( get_theme_mod( 'april_herocall' ) ) ) 
-	            ? esc_url( $hcdf ) : get_theme_mod( 'april_herocall' );
+	$herouri  = ( empty( get_theme_mod( 'april_herocall' ) ) ) ? $hcdg 
+					   : get_theme_mod( 'april_herocall' );
 	// hero background size
 	$herobksize  = ( empty( get_theme_mod( 'april_herobksize' ) ) ) 
 	            ? 'cover' : get_theme_mod( 'april_herobksize' );
@@ -72,14 +72,14 @@ function april_theme_customizer_css()
 	.site-title, .site-description{ position: relative; left: '. esc_attr( $rlp ) .'px; top: '. esc_attr( $rtp ) .'px;}
 	.site-title a, site-description{ color: ' . esc_attr( $siteta ) .';}
 	.current_page_item a, .current_page_ancestor a{background: rgba(252,252,252, .8);}
-    .herocall{background-image: url('. $herouri . '); background-size: '.esc_attr($herobksize).';}
+    .herocall{background-image: url('. esc_url( $herouri ) .') ; background-size: '.esc_attr($herobksize).';}
 	.ctasection{margin-left: '.esc_attr( $ctaposit ) .'%}
 	.page article.page, .single article.post{max-width: '. esc_attr( $maxw ) .'px;margin: 0 auto;}';
     wp_register_style( 'april-inline-customizer', true );
 	wp_enqueue_style( 'april-inline-customizer' );
 	wp_add_inline_style( 'april-inline-customizer', $cssstyles );
-
 }
+
 /**
  * Add section to the Options menu.
  *
@@ -186,7 +186,7 @@ function april_register_theme_customizer_setup($wp_customize)
 	// Setting: Upload.
 	$wp_customize->add_setting( 'april_herocall', array(
 		'type'                 => 'theme_mod',
-		'default'              => esc_url( $herodft ),
+		'default'              => sanitize_url($herodft),
 		'transport'            => 'refresh', 
 		'capability'           => 'edit_theme_options',
 		'sanitize_callback'    => 'sanitize_text_field'
