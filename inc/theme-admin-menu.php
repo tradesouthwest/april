@@ -77,12 +77,14 @@ function april_ad_setting_one() {
     - Placement of Call to Action buttons.
     - Font for Content
       Choose the font family type.
-      ', 'april' ) .'</pre>';
+    - Set maximum width of articles.
+    - Add page background image', 'april' 
+    ) .'</pre>';
     echo '<h5>' . esc_html__( 'For Call To Action Widget try: (copy/paste into widget)', 'april' ) . '</h5>';
     echo '<hr><p>';
     echo normalize_whitespace( 
       '&lt;p>&lt;a class="button primary" href="#main" title="go to content">View Our Program&lt;/a>&lt;/p>
-      &lt;p>&lt;a class="button primary" href="#main" title="go to content">View Other Programs&lt;/a>&lt;/p>'
+    &lt;p>&lt;a class="button primary" href="#main" title="go to content">View Other Programs&lt;/a>&lt;/p>'
     );
     echo '</p>';
     echo '<p><em>' . esc_html__( 'Use the Custom HTML type of widget to display your buttons with.', 'april') . '</em></p>';
