@@ -47,7 +47,7 @@ function april_theme_customizer_css()
 	$fntfamily  = ( empty( get_theme_mod( 'april_fontfamily' ) ) ) ? 'sans-serif' 
 				: wp_strip_all_tags( get_theme_mod( 'april_fontfamily' ) );
     // background image
-	$herouri  = ( empty( get_theme_mod( 'april_herocall' ) ) ) ? $hcdg 
+	$herouri  = ( empty( get_theme_mod( 'april_herocall' ) ) ) ? esc_url( $hcdg )  
 					   : get_theme_mod( 'april_herocall' );
 	// hero background size
 	$herobksize  = ( empty( get_theme_mod( 'april_herobksize' ) ) ) 
