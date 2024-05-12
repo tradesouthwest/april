@@ -157,23 +157,6 @@ function april_theme_enqueue_styles() {
 			'comment-reply' 
 		);
 	}
-
-    wp_enqueue_script( 
-		'april-script', 
-		get_template_directory_uri() . '/js/functions.js', 
-		array( 'jquery' ), 
-		'1.0.0', 
-		true 
-	);
-
-	wp_localize_script(
-		'april-script',
-		'screenReaderText',
-		array(
-			'expand'   => __( 'expand child menu', 'april' ),
-			'collapse' => __( 'collapse child menu', 'april' ),
-		)
-	);
 }
 /**
  * Support for logo upload, output. 
@@ -210,7 +193,7 @@ function april_theme_widgets_init() {
 	register_sidebar(
 		array(
 			'name'          => __( 'Call To Action', 'april' ),
-			'id'            => 'sidebar-2',
+			'id'            => 'sidebar-cta',
 			'description'   => __( 'Appears in the hero large image section', 'april' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',

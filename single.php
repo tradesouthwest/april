@@ -24,15 +24,17 @@ get_header(); ?>
 				<p class="site-description"><?php echo esc_html__( get_bloginfo( 'description', 'display' ) ); ?></p>
 
 			</div><!-- .site-branding -->
+			<div class="ctasection">
 			<?php 
-			if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
-				<div class="ctasection">        
-				
-					<?php dynamic_sidebar( 'sidebar-2' ); ?>
-	                
-    	        </div>
-			<?php 
+			if ( is_active_sidebar( 'sidebar-cta' ) ) : ?>
+
+					<?php dynamic_sidebar( 'sidebar-cta' ); ?>
+    
+			<?php else: 
+			echo '<div class="nocta-blank">&nbsp;</div>';
 			endif; ?>
+			</div>
+
         </div><!-- ends herocall and ctasection -->
 		
 		<?php 

@@ -31,13 +31,14 @@ function april_sanitize_integer( $input ) {
 
 /** A1
  * CUSTOM FONT OUTPUT, CSS
- * 
- * set values into inline styles
+ * The @font-face rule should be added to the stylesheet before any styles. (priority 2)
+ * @uses background-image as linear gradient meerly remove any input background image.
  * @since 1.0.0
 */
 function april_theme_customizer_css() 
 {   
     $fnt = $font = ''; $gen_colr = '#494949'; 
+   
     $hcdf  = get_template_directory_uri() . '/rels/swimmers-wide-default.jpg';
     $hsdf  = get_stylesheet_directory_uri() . '/';
     
@@ -57,25 +58,27 @@ function april_theme_customizer_css()
 	            ? '#ffffff' : get_theme_mod( 'april_siteta' );
 	// april_ctaposit
 	$ctaposit   = ( empty( get_theme_mod( 'april_ctaposit' ) ) ) 
-	            ? '100' : get_theme_mod( 'april_ctaposit' );
+	            ? '51' : get_theme_mod( 'april_ctaposit' );
     $rlp        = ( empty( get_theme_mod( 'april_rlposit' ) ) ) ? '10' 
                          : get_theme_mod( 'april_rlposit' );
     $rtp        = ( empty( get_theme_mod( 'april_rtposit' ) ) ) ? '10' 
                          : get_theme_mod( 'april_rtposit' );
-    $maxw       = ( empty( get_theme_mod( 'april_maxwidth' ) ) ) ? '1200' 
-                         : get_theme_mod( 'april_maxwidth' );
+	$maxw       = ( empty( get_theme_mod( 'april_maxwidth' ) ) ) ? '1200' 
+                         : get_theme_mod( 'april_maxwidth' );        
     endif;
+	/* use above set values into inline styles */
     $cssstyles = 
 	'body, button, input, select, textarea, p{ font-family: '. esc_attr( $fntfamily ) .';}
 	.site-title, .site-description{ position: relative; left: '. esc_attr( $rlp ) .'px; top: '. esc_attr( $rtp ) .'px;}
 	.site-title a, site-description{ color: ' . esc_attr( $siteta ) .';}
 	.current_page_item a, .current_page_ancestor a{background: rgba(252,252,252, .8);}
-        .herocall{background-image: url('. $herouri . '); background-size: '.esc_attr($herobksize).';}
+    .herocall{background-image: url('. $herouri . '); background-size: '.esc_attr($herobksize).';}
 	.ctasection{margin-left: '.esc_attr( $ctaposit ) .'%}
-        .page article.page, .single article.post{max-width: '. esc_attr( $maxw ) .'px;margin: 0 auto;}';
-        wp_register_style( 'april-inline-customizer', true );
+	.page article.page, .single article.post{max-width: '. esc_attr( $maxw ) .'px;margin: 0 auto;}';
+    wp_register_style( 'april-inline-customizer', true );
 	wp_enqueue_style( 'april-inline-customizer' );
 	wp_add_inline_style( 'april-inline-customizer', $cssstyles );
+
 }
 /**
  * Add section to the Options menu.
