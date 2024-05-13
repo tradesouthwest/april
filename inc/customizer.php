@@ -62,42 +62,40 @@ function april_theme_customizer_css() {
     
     if( get_theme_mods() ) : 
 	$fntfamily  = ( empty( get_theme_mod( 'april_fontfamily' ) ) ) ? april_theme_defaults( esc_attr( $args['fntfamily'])) 
-		      : wp_strip_all_tags( get_theme_mod( 'april_fontfamily' ) );
-        // background image
+				  : wp_strip_all_tags( get_theme_mod( 'april_fontfamily' ) );
+    // background image
 	$herouri    = ( empty( get_theme_mod( 'april_herocall' ) ) ) ? april_theme_defaults( esc_url( $args['herouri']) ) 
-		      : get_theme_mod( 'april_herocall' );
+				  : get_theme_mod( 'april_herocall' );
 	// hero background size
 	$herobksize = ( empty( get_theme_mod( 'april_herobksize' ) ) ) ? april_theme_defaults( esc_attr( $args['fntfamily'])) 
-		      : get_theme_mod( 'april_herobksize' );
+				  : get_theme_mod( 'april_herobksize' );
 	// site title color
 	$siteta     = ( empty( get_theme_mod( 'april_siteta' ) ) ) ? april_theme_defaults( esc_attr( $args['siteta'])) 
-		      : get_theme_mod( 'april_siteta' );
+				  : get_theme_mod( 'april_siteta' );
 	// april_ctaposit
 	$ctaposit   = ( empty( get_theme_mod( 'april_ctaposit' ) ) ) ? april_theme_defaults( esc_attr( $args['ctaposit'] )) 
-		      : get_theme_mod( 'april_ctaposit' );
-        $rlp        = ( empty( get_theme_mod( 'april_rlposit' ) ) ) ? april_theme_defaults( esc_attr( $args['rlp'])) 
-                      : get_theme_mod( 'april_rlposit' );
-        $rtp        = ( empty( get_theme_mod( 'april_rtposit' ) ) ) ? april_theme_defaults( esc_attr( $args['rtp'])) 
-                      : get_theme_mod( 'april_rtposit' );
-	$tposit     = ( empty( get_theme_mod( 'april_tposit' ) ) ) ? april_theme_defaults( esc_attr( $args['tposit'])) 
-                      : get_theme_mod( 'april_tposit' );
-	// max width
+				  : get_theme_mod( 'april_ctaposit' );
+    $rlp        = ( empty( get_theme_mod( 'april_rlposit' ) ) ) ? april_theme_defaults( esc_attr( $args['rlp'])) 
+                  : get_theme_mod( 'april_rlposit' );
+    $rtp        = ( empty( get_theme_mod( 'april_rtposit' ) ) ) ? april_theme_defaults( esc_attr( $args['rtp'])) 
+                  : get_theme_mod( 'april_rtposit' );
+	$tposit        = ( empty( get_theme_mod( 'april_tposit' ) ) ) ? april_theme_defaults( esc_attr( $args['tposit'])) 
+                  : get_theme_mod( 'april_tposit' );
 	$maxw       = ( empty( get_theme_mod( 'april_maxwidth' ) ) ) ? april_theme_defaults( esc_attr( $args['maxw']))
-                      : get_theme_mod( 'april_maxwidth' );        
+                  : get_theme_mod( 'april_maxwidth' );        
 
-	    /* use above set values into inline styles */
-	    $cssstyles = 
-		'body, button, input, select, textarea, p{ font-family: '. esc_attr( $fntfamily ) .';}
-		.site-title, .site-description{ position: relative; left: '. esc_attr( $rlp ) .'px; top: '. esc_attr( $rtp ) .'px;}
-		.site-title a, site-description{ color: ' . esc_attr( $siteta ) .';}
-		.current_page_item a, .current_page_ancestor a{background: rgba(252,252,252, .8);}
-	        .herocall{background-image: url('. esc_url( $herouri ) .') ; background-size: '.esc_attr($herobksize).';}
-		.ctasection{margin-left: '.esc_attr( $ctaposit ) .'%}.site-branding{ text-align: '. esc_attr( $tposit ) .';}
-		.page article.page, .single article.post{max-width: '. esc_attr( $maxw ) .'px;margin: 0 auto;}';
-        
-	    wp_register_style( 'april-inline-customizer', true );
-	    wp_enqueue_style( 'april-inline-customizer' );
-	    wp_add_inline_style( 'april-inline-customizer', $cssstyles );
+	/* use above set values into inline styles */
+    $cssstyles = 
+	'body, button, input, select, textarea, p{ font-family: '. esc_attr( $fntfamily ) .';}
+	.site-title, .site-description{ position: relative; left: '. esc_attr( $rlp ) .'px; top: '. esc_attr( $rtp ) .'px;}
+	.site-title a, site-description{ color: ' . esc_attr( $siteta ) .';}
+	.current_page_item a, .current_page_ancestor a{background: rgba(252,252,252, .8);}
+    .herocall{background-image: url('. esc_url( $herouri ) .') ; background-size: '.esc_attr($herobksize).';}
+	.ctasection{margin-left: '.esc_attr( $ctaposit ) .'%}.site-branding{ text-align: '. esc_attr( $tposit ) .';}
+	.page article.page, .single article.post{max-width: '. esc_attr( $maxw ) .'px;margin: 0 auto;}';
+    wp_register_style( 'april-inline-customizer', true );
+	wp_enqueue_style( 'april-inline-customizer' );
+	wp_add_inline_style( 'april-inline-customizer', $cssstyles );
 
 	endif;
 		return false;
@@ -375,4 +373,4 @@ function april_customize_partial_blogname() {
  */
 function april_customize_partial_blogdescription() {
 	bloginfo( 'description' );
-} 
+}
