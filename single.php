@@ -64,6 +64,12 @@ get_header(); ?>
 					<div class="prev-next-links">
 						<p><?php previous_post_link(); ?><span>&nbsp;</span><?php next_post_link(); ?></p>
 					</div>
+				
+				<div class="april-recent-posts">
+					
+					<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
+			    
+				</div>
 				<?php 
 				endif; ?>
 		</main>

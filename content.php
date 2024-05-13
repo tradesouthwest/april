@@ -16,9 +16,9 @@
 		href ="<?php echo esc_url( get_attachment_link( get_post_thumbnail_id() ) ); ?>" 
 		title="<?php the_title_attribute( 'before=Permalink to: &after=' ); ?>">
 		<?php 
-		the_post_thumbnail( 'relational-featured', array( 
+		the_post_thumbnail( 'medium_large', array( 
 				'itemprop' => 'image', 
-				'class'  => 'relational-featured',
+				'class'  => 'april-featured',
 				'alt'  => get_attachment_link( get_post_thumbnail_id() )
 			) 
 		); ?></a>
