@@ -8,7 +8,13 @@
 add_action('admin_menu', 'april_create_theme_options_page');
 add_action('admin_init', 'april_register_and_build_fields');
 
-// Creates theme page
+/**
+ * Add theme menu
+ *
+ * @since 1.0.0
+ * @uses add_theme_page()
+ * $page_title, $menu_title, $capability, $menu_slug, $function
+ */
 function april_create_theme_options_page() {
    add_theme_page( esc_html__( 'Theme Help', 'april' ), 
                   esc_html__( 'Theme Help', 'april' ), 
@@ -63,7 +69,9 @@ function april_options_page_fn() {
 
 // Ad one
 function april_ad_setting_two() {
-   echo '<a class="button secondary" href="' . admin_url( '/' ) . 'customize.php?return=%2Fapril-theme%2Fwp-admin%2Fthemes.php%3Fpage%3Dhome%252Fleadspil%252Fpublic_html%252Fapril-theme%252Fwp-content%252Fthemes%252Fapril%252Finc%252Ftheme-admin-menu.php" title="' . esc_attr__( 'Customize Theme Here', 'april' ) . '">'
+   echo '<a class="button secondary" href="' . esc_url( admin_url( '/' ) 
+        . 'customize.php?return=%2Fapril-theme%2Fwp-admin%2Fthemes.php%3Fpage%3Dhome%252Fleadspil%252Fpublic_html%252Fapril-theme%252Fwp-content%252Fthemes%252Fapril%252Finc%252Ftheme-admin-menu.php' ) .'" 
+        title="' . esc_attr__( 'Customize Theme Here', 'april' ) . '">'
         . esc_html__( 'Customize Theme Here', 'april' ) . '</a>';
 }
 
@@ -81,10 +89,8 @@ function april_ad_setting_one() {
       ', 'april' ) .'</pre>';
     echo '<h5>' . esc_html__( 'For Call To Action Widget try: (copy/paste into widget)', 'april' ) . '</h5>';
     echo '<hr><p>';
-    echo normalize_whitespace( 
-      '&lt;p>&lt;a class="button primary" href="#main" title="go to content">View Our Program&lt;/a>&lt;/p>
-      &lt;p>&lt;a class="button primary" href="#main" title="go to content">View Other Programs&lt;/a>&lt;/p>'
-    );
+    echo '&lt;p>&lt;a class="button primary" href="#main" title="go to content">View Our Program&lt;/a>&lt;/p>
+      &lt;p>&lt;a class="button primary" href="#main" title="go to content">View Other Programs&lt;/a>&lt;/p>';
     echo '</p>';
     echo '<p><em>' . esc_html__( 'Use the Custom HTML type of widget to display your buttons with.', 'april') . '</em></p>';
     echo '<h5>' . esc_html__( 'To remove Recent Posts Widget from single posts pages, add this to the Customizer > Additional CSS section:', 'april' )

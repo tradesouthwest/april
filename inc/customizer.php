@@ -196,7 +196,7 @@ function april_register_theme_customizer_setup($wp_customize)
 		'description' => esc_html__( 'Choose the font family type.', 'april'),
 		'type'        => 'select',
     	'choices'     => array(
-			'inherit'    => esc_attr__( 'Select font', 'apriil' ),
+			'inherit'    => esc_attr__( 'Select font', 'april' ),
         	'sans-serif' => esc_attr__( 'Sans Serif', 'april'),
 			'serif'      => esc_attr__( 'Serif', 'april'),
 			'Helvetica'  => esc_attr__( 'Helvetica', 'april'),
@@ -207,7 +207,7 @@ function april_register_theme_customizer_setup($wp_customize)
 	// Setting: Upload.
 	$wp_customize->add_setting( 'april_herocall', array(
 		'type'                 => 'theme_mod',
-		'default'              => sanitize_url($herodft),
+		'default'              => esc_url_raw( $herodft ),
 		'transport'            => 'refresh', 
 		'capability'           => 'edit_theme_options',
 		'sanitize_callback'    => 'sanitize_text_field'
