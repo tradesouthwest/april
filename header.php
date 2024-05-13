@@ -59,8 +59,8 @@
             <div class="april-logo-container site-logo">
                 <a href="<?php 
 				echo esc_url( home_url( '/' ) ); ?>" 
-                   rel="bookmark"><?php echo wp_kses_post( 
-                   force_balance_tags( april_theme_custom_logo() ) ); ?></a>
+                   rel="bookmark"><?php 
+				echo wp_kses_post( force_balance_tags( april_theme_custom_logo() ) ); ?></a>
             </div>
             <?php 
             endif; ?>
