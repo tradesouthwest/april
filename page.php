@@ -19,7 +19,7 @@ get_header(); ?>
 		    <div class="site-branding">
 
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<p class="site-description"><?php echo esc_html__( get_bloginfo( 'description', 'display' ) ); ?></p>
+				<p class="site-description"><?php echo esc_html( get_bloginfo( 'description', 'display' ) ); ?></p>
 
 			</div><!-- .site-branding -->
 			<div class="ctasection">
@@ -28,7 +28,8 @@ get_header(); ?>
 
 					<?php dynamic_sidebar( 'sidebar-cta' ); ?>
     	        
-			<?php else: 
+			<?php 
+			else: 
 			echo '<div class="nocta-blank"></div>';
 			endif; ?>
 			</div>
