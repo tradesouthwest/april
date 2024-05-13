@@ -29,7 +29,7 @@ get_header(); ?>
 					<?php dynamic_sidebar( 'sidebar-cta' ); ?>
     	        
 			<?php else: 
-			echo '<div class="nocta-blank">&nbsp;</div>';
+			echo '<div class="nocta-blank"></div>';
 			endif; ?>
 			</div>
 
