@@ -2,14 +2,14 @@
 /**
  * April Customizer functionality
  *
- * @package april
- * @since april 1.0
+ * @package    ClassicPress
+ * @subpackage April
+ * @since      April 1.0.2
  */
 
 /**
- * Page options settings
+ * Page options hooks
  */
-
 // A1
 add_action( 'wp_enqueue_scripts', 'april_theme_customizer_css', 15 );  
 // A2
@@ -19,8 +19,8 @@ add_action( 'after_setup_theme', 'april_custom_header_and_background' );
 
 /**
  * Text sanitizer for numeric values
- * @since 1.0
- * @see https://themefoundation.com/wordpress-theme-customizer/
+ * @since         1.0.0
+ * @see           https://themefoundation.com/wordpress-theme-customizer/
  * @return string $input
  */
 function april_sanitize_integer( $input ) {
@@ -31,9 +31,8 @@ function april_sanitize_integer( $input ) {
 
 /**
  * Set default values in an arry
- * $hcdf  = get_template_directory_uri() . '/rels/swimmers-wide-default.jpg';
- * $hcdg  = get_template_directory_uri() . '/rels/1x1.png';
- * $hsdf  = get_stylesheet_directory_uri() . '/';
+ *
+ * @return string $args
  */
 function april_theme_defaults( $args ){
 	$defaults = array(
@@ -55,12 +54,15 @@ function april_theme_defaults( $args ){
 /** A1
  * CUSTOM FONT OUTPUT, CSS
  * The @font-face rule should be added to the stylesheet before any styles. (priority 2)
- * @uses background-image as linear gradient meerly remove any input background image.
+ * 
  * @since 1.0.0
 */
 function april_theme_customizer_css() {
     
     if( get_theme_mods() ) : 
+	// in function defaults
+	$fntfamily = $herouri = $siteta = $ctaposit = $rlp = $tposit = $maxw = '';
+	// font-family
 	$fntfamily  = ( empty( get_theme_mod( 'april_fontfamily' ) ) ) ? april_theme_defaults( esc_attr( $args['fntfamily'])) 
 				  : wp_strip_all_tags( get_theme_mod( 'april_fontfamily' ) );
     // background image
@@ -93,6 +95,7 @@ function april_theme_customizer_css() {
     .herocall{background-image: url('. esc_url( $herouri ) .') ; background-size: '.esc_attr($herobksize).';}
 	.ctasection{margin-left: '.esc_attr( $ctaposit ) .'%}.site-branding{ text-align: '. esc_attr( $tposit ) .';}
 	.page article.page, .single article.post{max-width: '. esc_attr( $maxw ) .'px;margin: 0 auto;}';
+
     wp_register_style( 'april-inline-customizer', true );
 	wp_enqueue_style( 'april-inline-customizer' );
 	wp_add_inline_style( 'april-inline-customizer', $cssstyles );

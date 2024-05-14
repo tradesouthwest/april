@@ -1,9 +1,10 @@
 <?php
 /**
- * @package ClassicPress
- * @subpackage April
+ * Options page functionality 
  * 
- * @since 1.0.0
+ * @package    ClassicPress
+ * @subpackage April
+ * @since      April 1.0.0
  */
 add_action('admin_menu', 'april_create_theme_options_page');
 add_action('admin_init', 'april_register_and_build_fields');
@@ -41,29 +42,29 @@ function april_register_and_build_fields() {
 // Render Options page
 function april_options_page_fn() {
 ?>
-   <div id="theme-options-wrap" class="widefat">
-      <div class="icon32" id="icon-tools"></div>
+    <div id="theme-options-wrap" class="widefat">
+        <div class="icon32" id="icon-tools"></div>
 
-      <h2><?php esc_html_e( 'April Theme Guide', 'april' ); ?></h2>
-      <p><?php esc_html_e( 'General Help', 'april' ); ?></p>
+        <h2><?php esc_html_e( 'April Theme Guide', 'april' ); ?></h2>
+        <p><?php esc_html_e( 'General Help', 'april' ); ?></p>
 
         <form method="post" action="options.php" enctype="multipart/form-data">
-          <?php settings_fields('april_theme_info'); ?>
-          <?php do_settings_sections(__FILE__); ?>
+            <?php settings_fields('april_theme_info'); ?>
+            <?php do_settings_sections(__FILE__); ?>
         </form>
-    <style id="april-options-css">
-    #theme-options-wrap {
-        width: 93%;
-        padding: 3em;
-        background: #fafeff;   
-        border-top: 1px solid white;}
-    #theme-options-wrap #icon-tools {
-        position: relative;
-        top: -10px;}	
-    #theme-options-wrap input, #theme-options-wrap textarea {
-        padding: .7em;}
-    #theme-options-wrap em{color:#646464}</style>
-</div>
+        <style id="april-options-css">
+        #theme-options-wrap {
+            width: 93%;
+            padding: 3em;
+            background: #fafeff;   
+            border-top: 1px solid white;}
+        #theme-options-wrap #icon-tools {
+            position: relative;
+            top: -10px;}	
+        #theme-options-wrap input, #theme-options-wrap textarea {
+            padding: .7em;}
+        #theme-options-wrap em{color:#646464}</style>
+    </div>
 <?php
 }
 

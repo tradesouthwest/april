@@ -2,8 +2,9 @@
 /**
  * The template part for displaying content
  *
- * @package april
- * @since april 1.0
+ * @package    ClassicPress
+ * @subpackage April
+ * @since      April 1.0.0
  */
 ?>
 

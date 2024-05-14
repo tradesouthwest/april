@@ -1,10 +1,13 @@
 <?php
 /**
  * The template for displaying Comments
- * @package April
- * @since 1.0.0
+ *
  * The area of the page that contains both current comments
  * and the comment form.
+ * 
+ * @package    ClassicPress
+ * @subpackage April
+ * @since      April 1.0.0
  */
 
 /*

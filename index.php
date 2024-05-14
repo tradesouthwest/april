@@ -9,8 +9,9 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package april
- * @since april 1.0
+ * @package    ClassicPress
+ * @subpackage April
+ * @since      April 1.0.0
  */
 
 get_header(); ?>

@@ -2,9 +2,9 @@
 /**
  * The template for the sidebar containing the main widget area
  *
- * @package ClassicPress
- * @subpackage april
- * @since april 1.0
+ * @package    ClassicPress
+ * @subpackage April
+ * @since      April 1.0.0
  */
 ?>
 <div class="sidebar-widget-section">

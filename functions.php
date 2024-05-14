@@ -22,8 +22,9 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package april
- * @since 1.0.0
+ * @package    ClassicPress
+ * @subpackage April
+ * @since      April 1.0.0
  */
 
 /**
