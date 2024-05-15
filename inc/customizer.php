@@ -4,7 +4,7 @@
  *
  * @package    ClassicPress
  * @subpackage April
- * @since      April 1.0.2
+ * @since      April 1.0.3
  */
 
 /**
@@ -16,40 +16,8 @@ add_action( 'wp_enqueue_scripts', 'april_theme_customizer_css', 15 );
 add_action( 'customize_register', 'april_register_theme_customizer_setup' );
 // A3
 add_action( 'after_setup_theme', 'april_custom_header_and_background' );
-
-/**
- * Text sanitizer for numeric values
- * @since         1.0.0
- * @see           https://themefoundation.com/wordpress-theme-customizer/
- * @return string $input
- */
-function april_sanitize_integer( $input ) {
-    if( is_numeric( $input ) ) {
-        return intval( $input );
-    }
-} 
-
-/**
- * Set default values in an arry
- *
- * @return string $args
- */
-function april_theme_defaults( $args ){
-	$defaults = array(
-		'fntfamily'  => 'sans-serif',
-		'herouri'    => get_template_directory_uri() . '/rels/1x1.png',
-		'herobksize' => 'cover',
-		'siteta'     => '#dddddd',
-		'ctaposit'   => '51',
-		'rlp'        => '10',
-		'rtp'        => '10',
-		'maxw'       => '1200',
-		'tposit'     => 'left'
-	);
-	$args = wp_parse_args( $args, $defaults );
-
-	return( $args );
-}
+// A4
+add_action( 'customize_register', 'april_customize_register', 11 );
 
 /** A1
  * CUSTOM FONT OUTPUT, CSS
@@ -57,33 +25,46 @@ function april_theme_defaults( $args ){
  * 
  * @since 1.0.0
 */
-function april_theme_customizer_css() {
+function april_theme_customizer_css( $args ) {
     
     if( get_theme_mods() ) : 
 	// in function defaults
 	$fntfamily = $herouri = $siteta = $ctaposit = $rlp = $tposit = $maxw = '';
 	// font-family
-	$fntfamily  = ( empty( get_theme_mod( 'april_fontfamily' ) ) ) ? april_theme_defaults( esc_attr( $args['fntfamily'])) 
+	$fntfamily  = ( empty( get_theme_mod( 'april_fontfamily' ) ) ) 
+				  ? esc_attr( 'sans-serif' ) 
 				  : wp_strip_all_tags( get_theme_mod( 'april_fontfamily' ) );
     // background image
-	$herouri    = ( empty( get_theme_mod( 'april_herocall' ) ) ) ? april_theme_defaults( esc_url( $args['herouri']) ) 
+	$herouri    = ( empty( get_theme_mod( 'april_herocall' ) ) ) 
+	              ? esc_url( get_template_directory_uri() . '/rels/1x1.png' ) 
 				  : get_theme_mod( 'april_herocall' );
 	// hero background size
-	$herobksize = ( empty( get_theme_mod( 'april_herobksize' ) ) ) ? april_theme_defaults( esc_attr( $args['fntfamily'])) 
+	$herobksize = ( empty( get_theme_mod( 'april_herobksize' ) ) ) 
+				  ? esc_attr( 'cover' ) 
 				  : get_theme_mod( 'april_herobksize' );
 	// site title color
-	$siteta     = ( empty( get_theme_mod( 'april_siteta' ) ) ) ? april_theme_defaults( esc_attr( $args['siteta'])) 
+	$siteta     = ( empty( get_theme_mod( 'april_siteta' ) ) ) 
+				  ? esc_attr( '#ddd' ) 
 				  : get_theme_mod( 'april_siteta' );
 	// april_ctaposit
-	$ctaposit   = ( empty( get_theme_mod( 'april_ctaposit' ) ) ) ? april_theme_defaults( esc_attr( $args['ctaposit'] )) 
+	$ctaposit   = ( empty( get_theme_mod( 'april_ctaposit' ) ) ) 
+				  ? esc_attr( '51' ) 
 				  : get_theme_mod( 'april_ctaposit' );
-    $rlp        = ( empty( get_theme_mod( 'april_rlposit' ) ) ) ? april_theme_defaults( esc_attr( $args['rlp'])) 
+	// left position
+    $rlp        = ( empty( get_theme_mod( 'april_rlposit' ) ) ) 
+				  ? esc_attr( '10' ) 
                   : get_theme_mod( 'april_rlposit' );
-    $rtp        = ( empty( get_theme_mod( 'april_rtposit' ) ) ) ? april_theme_defaults( esc_attr( $args['rtp'])) 
+	// top position
+    $rtp        = ( empty( get_theme_mod( 'april_rtposit' ) ) ) 
+	              ? esc_attr( '10' ) 
                   : get_theme_mod( 'april_rtposit' );
-	$tposit        = ( empty( get_theme_mod( 'april_tposit' ) ) ) ? april_theme_defaults( esc_attr( $args['tposit'])) 
+	// title position
+	$tposit     = ( empty( get_theme_mod( 'april_tposit' ) ) ) 
+	              ? esc_attr( '10' ) 
                   : get_theme_mod( 'april_tposit' );
-	$maxw       = ( empty( get_theme_mod( 'april_maxwidth' ) ) ) ? april_theme_defaults( esc_attr( $args['maxw']))
+	// maximum width
+	$maxw       = ( empty( get_theme_mod( 'april_maxwidth' ) ) ) 
+	              ? esc_attr( '1200' )
                   : get_theme_mod( 'april_maxwidth' );        
 
 	/* use above set values into inline styles */
@@ -321,7 +302,7 @@ function april_custom_header_and_background() {
 
 }
 
-/**
+/** #A4
  * Adds postMessage support for site title and description for the Customizer.
  *
  * @since April 1.0
@@ -352,7 +333,6 @@ function april_customize_register( $wp_customize ) {
 		);
 	}
 }
-add_action( 'customize_register', 'april_customize_register', 11 );
 
 /**
  * Render the site title for the selective refresh partial.
