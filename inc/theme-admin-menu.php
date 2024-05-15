@@ -20,7 +20,7 @@ function april_create_theme_options_page() {
    add_theme_page( esc_html__( 'Theme Help', 'april' ), 
                   esc_html__( 'Theme Help', 'april' ), 
                   'administrator', 
-                  __FILE__, 
+                  basename( dirname(__FILE__) ), 
                   'april_options_page_fn'
                 );
 }
