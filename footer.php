@@ -43,6 +43,9 @@
 				<?php
 				printf( esc_attr__( 'Proudly powered by %s', 'april' ), 'ClassicPress' );
 				?></a></p>
+				<div class="upto">
+    				<a class="back_to_top" title="<?php echo esc_attr('Top of page link', 'tinydancer'); ?>"><sup>^</sup></a>
+				</div>
 			</div><!-- .site-info -->
 		</footer><!-- .site-footer -->
 	</div>

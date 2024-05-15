@@ -6,7 +6,7 @@
   Theme URI:    https://leadspilot.com/april-theme/
   Requires PHP: 7.4
   Requires CP:  1.4
-  Version:      1.0.2
+  Version:      1.0.3
   CMS required: wp_body_open WP action or function call not inserted
   Tags:         two-columns, translation-ready, featured-images, blog, e-commerce, news, custom-menu, custom-background, custom-logo, custom-header
   License:      GPL 3
@@ -25,6 +25,7 @@
  * 4.0 - Accessibility
  * 5.0 - Elements
  * 6.0 - WP Defaults
+ * 7.0 - Breakpoints
  */
 /* -------------------------------- 1.0 - Normalize
  */
@@ -260,14 +261,8 @@ figure a {
 
 .container {
     display: grid;
-    gap: 10px;
+    gap: 30px;
     padding: 10px;
-}
-
-@media screen and (min-width:768px) {
-    .container {
-        grid-template-columns: 2fr 1fr;
-    }
 }
 
 .header,
@@ -366,6 +361,15 @@ h2:not(.widget-title) {
     flex-wrap: wrap;
     white-space: normal;
     word-break: break-word;
+}
+.back_to_top sup{
+    font-size: x-large;
+    background: #fff;
+    border: thin solid dodgerblue;
+    border-radius: 50%;
+    padding: 2px 11px;
+    display: inline-block;
+    cursor: pointer;
 }
 
 /* -------------------------------- .3 Navigation 
@@ -938,7 +942,10 @@ figcaption:after {
     display: inline-block;
 }
 
+/* ---------------------------------------- 7.0 - Beakpoints
+ */
 @media screen and (min-width: 800px) {
+    
     .main {
         line-height: 1.8125;
     }
@@ -954,6 +961,10 @@ figcaption:after {
 
 @media screen and (min-width: 56.875em) {
 
+    .container {
+        grid-template-columns: 2fr 1fr;
+    }
+
     details.mobil-only-top[open]>summary {
         position: relative;
         width: 2em;
@@ -963,7 +974,11 @@ figcaption:after {
         display: flex;
     }
 }
-
+@media screen and (max-width: 768px) {
+    .left-side{
+        margin-left: 1em;
+    }
+}
 @media screen and (max-width:540px) {
     .ctasection .widget-title {
         font-size: 18px;

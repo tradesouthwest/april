@@ -145,7 +145,7 @@ if ( ! function_exists( 'wp_body_open' ) ) {
 /** #A3
  * Enqueues scripts and styles.
  *
- * @since April 1.0
+ * @since April 1.0.3
  */
 function april_theme_enqueue_styles() {
 	wp_enqueue_style( 
@@ -153,6 +153,13 @@ function april_theme_enqueue_styles() {
 		get_stylesheet_uri() 
 	);
     
+	wp_enqueue_script( 'april-theme-script', 
+		get_template_directory_uri() . '/rels/april-theme.js', 
+		array( 'jquery' ), 
+		'1.0.3', 
+		true 
+	);
+
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 
 			'comment-reply' 

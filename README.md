@@ -3,7 +3,7 @@ April is a blogging theme made for ClassicPress.
 
 - Requires PHP: 7.4
 - Requires CP:  1.4
-- Version:      1.0.2
+- Version:      1.0.3
 - Author:       Larry Judd
 - Tags:         two-columns, translation-ready, featured-images, blog, e-commerce, news, custom-menu, custom-background, custom-logo, custom-header
 - License:      GPL 3 (see LICENSE)
@@ -28,6 +28,10 @@ Theme built with CSS3 grid templating specifications for full mobile and small d
 Use https://github.com/tradesouthwest/april/issues to post your issues with this theme.
 
 # Change Log
+- 1.0.3
+fixed breakpoints
+added back to top button
+put customizer defaults inline
 - 1.0.2
 added default values to strings
 fixed header semvers
