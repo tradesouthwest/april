@@ -44,7 +44,7 @@
 				printf( esc_attr__( 'Proudly powered by %s', 'april' ), 'ClassicPress' );
 				?></a></p>
 				<div class="upto">
-    				<a class="back_to_top" title="<?php echo esc_attr('Top of page link', 'tinydancer'); ?>"><sup>^</sup></a>
+    				<a class="back_to_top" title="<?php esc_attr_e('Top of page link', 'april'); ?>"><sup>^</sup></a>
 				</div>
 			</div><!-- .site-info -->
 		</footer><!-- .site-footer -->
