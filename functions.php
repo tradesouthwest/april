@@ -237,7 +237,7 @@ function april_theme_widgets_init() {
 
 /** #A5
  * april_theme_after_entry
- * 
+ * @since 1.0.4
  */
 function april_theme_after_entry_render(){
 ?>
@@ -245,7 +245,7 @@ function april_theme_after_entry_render(){
 		<small><?php esc_html_e('By: ', 'april'); ?> <em><?php the_author(); ?></em>
 		| <?php esc_html_e('Categorized as: ', 'april'); ?> <em><?php the_category( ' &bull; ' ); ?></em>
 		| <?php esc_html_e('Keys: ', 'april'); ?><em> <?php the_tags( ' ' ); ?></em>
-		| <?php esc_html_e('Added on: ', 'april'); ?> <em><?php the_date(); ?></em>
+		| <?php esc_html_e('Added on: ', 'april'); ?> <em><?php echo esc_html( get_the_date() ); ?></em>
 		</small>
 	</div>
 	<?php 

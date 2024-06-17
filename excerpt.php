@@ -9,14 +9,13 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="content-title">
-    <?php 
-    the_title(
-        sprintf( '<h2 class="card-title h4"><a href="%s" rel="bookmark">', 
-        esc_attr( esc_url( get_permalink() ) ) 
-        ),
-        '</a></h2>'
-    ); ?>
+    <header class="content-title">
+        <h2 class="card-title h4">
+        <a href="<?php the_permalink(); ?>" 
+        title="<?php the_title_attribute(); ?>">
+        <?php the_title(); ?> <small class="post-publish-date"><em> 
+            <?php the_date(); ?></em></small></a>
+        </h2>
 	</header>
 	<div class="entry-content">
 		<?php 
